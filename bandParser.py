@@ -33,9 +33,13 @@ allowSiteHits = True
 
 
 def loadMapsKey():
-    with open("maps.key") as k:
-        global mapsKey
-        mapsKey = k.read().strip()
+    try:
+        with open("maps.key") as k:
+            global mapsKey
+            mapsKey = k.read().strip()
+    except (FileNotFoundError):
+        print(f"No maps.key file found - proceeding without API access...")
+        
 
 def lookupCountry(city = "London"):
     # we maintain a dict of city to country mappings
