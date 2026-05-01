@@ -25,8 +25,8 @@ STEPS:
 theBand = []
 mapsKey = ""
 cities = {}
-hostCountry = "United Kingdom"
-capacity = 400
+hostCountry = "Italy"
+capacity = 1000
 
 # whether to allow profile interrogation of R1K website (use with caution!)
 allowSiteHits = True
@@ -287,7 +287,7 @@ def summariseBand():
         print(f"{flag} {p}: {pays[p]}")
 
     print(f"\nTotals:\nLocal: {local} ({int(local/total*100)}%) International: {international} ({int(international/total*100)}%)\n{total}/{capacity} Confirmed Musicians.")
-    print(f"Local quota {int(local/(capacity*0.75)*100)}% filled; International quota {int(international/(capacity*0.25)*100)}% filled (assumes 75% locals)")
+
 
 # warm the cache of city:country mappings so we don't have to ask Google Maps each time
 def loadCountries(filename = "countries.pkl"):
